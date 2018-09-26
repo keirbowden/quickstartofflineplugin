@@ -5,7 +5,7 @@ Repository for the Salesforce CLI Quickstart Offline Mobile Plugin from my Dream
 I've intentionally not included all the artifacts created by the Salesforce CLI plugin generator, as it will
 have moved on by the time I give my talk. To use this example code:
 1. create a new plugin as detailed at:
-https://github.com/forcedotcom/sfdx-plugin-generate/blob/master/README.md and then copy the org
+https://github.com/forcedotcom/sfdx-plugin-generate/blob/master/README.md 
 2. Copy the commands/hello/org.ts file to commands/quickstart/offline.ts
 3. Replace the contents of offline.ts with the code from this repo - note that as the plugin structure is likely to have changed in 
 meantime you will likely need to tweak the code.
