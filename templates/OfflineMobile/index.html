@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+                <!-- Path to Framework7 Library CSS-->
+                <link rel="stylesheet" href="fw7/css/framework7.ios.min.css"></link>
+                <link rel="stylesheet" href="fw7/css/framework7.ios.colors.min.css">
+                    <link rel="stylesheet" href="fw7/css/framework7-icons.css"></link>
+                    <link rel="stylesheet" href="styles.css"></link>
+                    <script src="cordova.js"></script>
+                    <script src="force.js"></script>
+                    <script src="ui.js"></script>
+                    <script src="records.js"></script>
+                    <script src="main.js"></script>
+                    <script src="config.js"></script>
+
+                    
+                    <!-- Path to Framework7 Library JS-->
+                    <script type="text/javascript" src="fw7/js/framework7.min.js"></script>
+                    
+                    <script>
+                        config=new Config();
+                        main=new Main();
+                        records = new Records();
+                        ui=new UI();
+                        main.setupSmartstore();
+                    </script>
+    </head>
+    
+    <body>
+        
+        <!-- Status bar overlay for fullscreen mode-->
+        <div class="statusbar-overlay"></div>
+        <!-- Panels overlay-->
+        <div class="panel-overlay"></div>
+        <!-- Left panel with reveal effect-->
+        <div class="panel panel-left panel-reveal">
+            <div class="content-block-title">Disconnected Quickstart</div>
+            <div class="content-block">
+                <p>Disconnected is a quickstart offline storage demonstration application.</p>
+                <p class="buttons-row">
+                <a href="#" class="button button-round active close-panel">Close</a>
+                <a href="#" onclick="records.clear(ui.showBlankRecords);" class="button button-round active close-panel">Clear</a>
+                </p>
+                <!--<p><a href="#" class="close-panel">Close</a></p> -->
+            </div>
+        </div>
+        <!-- Views-->
+        <div class="views">
+            <!-- Your main view, should have "view-main" class-->
+            <div class="view view-main">
+                <!-- Top Navbar-->
+                <div class="navbar" style="top:20px">
+                    <!-- Navbar inner for Index page-->
+                    <div data-page="index" class="navbar-inner">
+                        <div class="center sliding" id="appTitle">Disconnected</div>
+                    </div>
+                </div>
+                <!-- Navbar inner for Record page-->
+                <div data-page="record" class="navbar-inner cached">
+                    <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+                    <div class="center sliding">Record</div>
+                </div>
+                <!-- Pages, because we need fixed-through navbar and lbar, it has additional appropriate classes-->
+                <div class="pages navbar-through toolbar-through">
+                    <!-- Index Page-->
+                    <div data-page="index" class="page">
+                        <!-- Scrollable page content-->
+                        <div class="page-content">
+                            <div class="content-block">
+                                <div class="content-block-inner">
+                                    <p>Choose a record below to get started.</p>
+                                    <p>Don't see any records? Use the sync button to pull down from
+                                    the server.</p>
+                                </div>
+                            </div>
+                            <div class="content-block-title">Records:</div>
+                            <div id="recordList">
+                            </div>
+                        </div>
+                    </div>
+                    <div data-page="record" class="page cached">
+                        <!-- Scrollable page content-->
+                        <div class="page-content">
+                            <div class="content-block-title" id="recordName"></div>
+                            <div class="content-block">
+                                <p id="recordDetail"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="toolbar">
+                    <div class="toolbar-inner">
+                        <a href="#index" class="link" onclick="ui.showAllRecords();"><i class="f7-icons">home</i></a>
+                        <a href="#" onclick="records.queryAllRecords(records.updateOnServer);" class="link"><i class="f7-icons">reload_round</i></a>
+                        <a href="#" class="link icon-only open-panel"> <i class="f7-icons">info</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
