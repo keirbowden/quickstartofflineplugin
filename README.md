@@ -12,3 +12,7 @@ meantime you will likely need to tweak the code.
 4. Copy the templates directory from this repo to the top level directory of the new plugin
 
 Then just link the plugin and away you go!
+
+The slide deck from the talk is available at : https://www.slideshare.net/keirb/quickstart-templates-with-the-salesforce-cli
+
+The recording of the Dreamforce session is available at : https://youtu.be/39dtws0PEyw
